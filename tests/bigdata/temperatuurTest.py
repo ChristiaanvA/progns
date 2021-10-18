@@ -90,7 +90,7 @@ def correctIjstijd(test):
 		return correctDuration and correctMonth and correctDayAndYear
 
 	test.test = testMethod
-	test.description = lambda : "print correcte duur en datum van de kleine ijstijd op 2 apparte regels"
+	test.description = lambda : "print correcte duur en datum van de kleine ijstijd op 2 aparte regels"
 
 @t.passed(correctIjstijd)
 @t.test(21)
