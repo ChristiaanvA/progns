@@ -50,7 +50,7 @@ def correctHighestTemp(test):
 		line1 = lib.getLine(lib.outputOf(_fileName), 0)
 		numbersMax = lib.getNumbersFromString(line1)
 
-		correctMonthMax = any([assertlib.contains(line1.lower(), month) for month in ["juli", "june", "jun"]])
+		correctMonthMax = any([assertlib.contains(line1.lower(), month) for month in ["juli", "July", "jun"]])
 
 		#Min temp
 		correctAnswerMin = [-24.7, 27, 1942]
@@ -58,7 +58,7 @@ def correctHighestTemp(test):
 		line2 = lib.getLine(lib.outputOf(_fileName), 1)
 		numbersMin = lib.getNumbersFromString(line2)
 
-		correctMonthMin = any([assertlib.contains(line2.lower(), month) for month in ["januari", "january", "jan"]])
+		correctMonthMin = any([assertlib.contains(line2.lower(), month) for month in ["januari", "January", "jan"]])
 	
 		#Total check
 		if sum(1 for n in numbersMax if n in correctAnswerMax) != 3 or not correctMonthMax or sum(1 for n in numbersMin if n in correctAnswerMin) != 3 or not correctMonthMin:
@@ -81,7 +81,7 @@ def correctIjstijd(test):
 
 		line2 = lib.getLine(lib.outputOf(_fileName), 3)
 
-		correctMonth = any([assertlib.contains(line2.lower(), month) for month in ["februari", "february", "feb"]])
+		correctMonth = any([assertlib.contains(line2.lower(), month) for month in ["februari", "February", "feb"]])
 
 		correctAnswer = [24, 1947]
 		numbers = lib.getNumbersFromString(line2)
@@ -90,7 +90,7 @@ def correctIjstijd(test):
 		return correctDuration and correctMonth and correctDayAndYear
 
 	test.test = testMethod
-	test.description = lambda : "print correcte duur en datum van de kleine ijstijd op 2 apparte regels"
+	test.description = lambda : "print correcte duur en datum van de kleine ijstijd op twee aparte regels"
 
 @t.passed(correctIjstijd)
 @t.test(21)
